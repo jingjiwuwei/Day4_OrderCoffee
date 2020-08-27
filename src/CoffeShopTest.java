@@ -108,7 +108,7 @@ public class CoffeShopTest {
         Beverage coffeeWithCondiment;
         System.out.println("请选择所加糖浆类型及数量：");
         System.out.println("糖浆类型包括：原味糖浆，香草糖浆，焦糖糖浆，要加入的数量写在类型之后（输入格式为类型+数量）");
-        System.out.println("例如：原味+3 ；不加(直接回车)");
+        System.out.println("例如：原味，3 ；不加(直接回车)");
 
 
         System.out.println("请选择所加糖浆类型及数量：");
