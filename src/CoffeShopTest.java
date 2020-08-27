@@ -146,7 +146,6 @@ public class CoffeShopTest {
                 break;
 
             default:
-                System.out.println("亲暂时没有您要找的配料，或者您没有按照指定格式输入哦");
                 coffeeWithCondiment = coffee;
         }
         
