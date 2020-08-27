@@ -13,8 +13,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CoffeShopTest {
+    public static Scanner scanner = new Scanner(System.in);
+
+    //验证输入：判断是否为数字，判断输入的数字范围是否正确
+    public static String InputCheck(){
+        String output;
+        if (scanner.hasNextLine()){
+            output = scanner.nextLine();
+            List<String> syrup_list = Arrays.asList(output.split("，"));
+            if (syrup_list.size()==2){
+                return output;
+            }
+        }
+        return "1";
+    }
+    
     public static void main(String[] args) {
         System.out.println("欢迎点单～");
+        System.out.println("提示：如果未按照要求输入正确的格式，系统会选择默认值！！");
+
         System.out.println("请选择咖啡：");
         System.out.println("1. 浓缩    2. 拿铁   3.星冰乐  （默认拿铁）");
         Scanner scanner = new Scanner(System.in);
@@ -88,18 +105,21 @@ public class CoffeShopTest {
 
 
 
-
         Beverage coffeeWithCondiment;
         System.out.println("请选择所加糖浆类型及数量：");
-        System.out.println("糖浆类型包括：原味糖浆，香草糖浆，焦糖糖浆，要加入的数量写在类型之后（输入格式如下）");
-        System.out.println("原味,3  ；香草,2  ；不加(直接回车)");
+        System.out.println("糖浆类型包括：原味糖浆，香草糖浆，焦糖糖浆，要加入的数量写在类型之后（输入格式为类型+数量）");
+        System.out.println("例如：原味+3 ；不加(直接回车)");
 
 
         System.out.println("请选择所加糖浆类型及数量：");
-        String syrup = scanner.nextLine();
-
+        String syrup = InputCheck();
+        while (syrup.equals("1")){
+            System.out.println("亲请按照指示格式输入");
+            syrup = InputCheck();
+        }
         List<String> syrup_list = Arrays.asList(syrup.split("，"));
-        // 获取配料种类和数量
+            // 获取配料种类和数量
+
         String syrup_type = syrup_list.get(0);
         int syrup_num =  Integer.parseInt(syrup_list.get(1));
         switch (syrup_type){
@@ -126,6 +146,7 @@ public class CoffeShopTest {
                 break;
 
             default:
+                System.out.println("亲暂时没有您要找的配料，或者您没有按照指定格式输入哦");
                 coffeeWithCondiment = coffee;
         }
         
@@ -138,9 +159,6 @@ public class CoffeShopTest {
 
         System.out.println("====================请确认您的订单====================");
         System.out.println(coffeeWithCondiment.getDescription());
-        System.out.println("另加配料包括：" );
-//        System.out.println(" 总共的价格是："+ coffeeWithCondiment.cost());
-
         System.out.println(" 总共的价格是："+ coffeeWithCondiment.cost());
         System.out.println("====================下单成功，请稍等====================");
 

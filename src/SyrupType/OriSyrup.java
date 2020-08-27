@@ -9,7 +9,7 @@ public class OriSyrup extends CondimentDecorator {
 
     @Override
     public String getDescription() {
-        return this.beverage.getDescription() + " 配料另加 " + "原味糖浆";
+        return this.beverage.getDescription() + " 配料另加原味糖浆1份";
     }
 
     @Override

@@ -5,13 +5,14 @@ import CoffeeType.Beverage;
 public class CaramelSyrup extends CondimentDecorator {
 
     public CaramelSyrup(Beverage beverage){
+
         this.beverage = beverage;
     }
 
 
     @Override
     public String getDescription() {
-        return this.beverage.getDescription() + " 配料另加 "+"焦糖糖浆";
+        return this.beverage.getDescription() + " 配料另加焦糖糖浆1份";
     }
 
     @Override
