@@ -1,3 +1,5 @@
+package SyrupType;
+
 import CoffeeType.Beverage;
 
 public abstract class CondimentDecorator extends Beverage {

@@ -1,3 +1,5 @@
+package SyrupType;
+
 import CoffeeType.Beverage;
 
 public class VanillaSyrup extends CondimentDecorator {

@@ -3,6 +3,9 @@ import CoffeeType.Espresso;
 import CoffeeType.Frappuccino;
 import CoffeeType.Latte;
 import MustSetting.*;
+import SyrupType.CaramelSyrup;
+import SyrupType.OriSyrup;
+import SyrupType.VanillaSyrup;
 
 
 import java.util.Arrays;
@@ -125,12 +128,7 @@ public class CoffeShopTest {
             default:
                 coffeeWithCondiment = coffee;
         }
-
-        System.out.println("是否继续添加配料：【Y/N】");
-        String continue_syrup = scanner.nextLine();
-        if (continue_syrup=="Y"){
-
-        }
+        
 
 
 
